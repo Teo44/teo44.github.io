@@ -14,6 +14,11 @@ header {
   text-align: center;
 }
 
+header a {
+  color: inherit;
+  text-decoration: none;
+}
+
 h1 {
   margin: 0;
   font-weight: 300;
@@ -21,18 +26,76 @@ h1 {
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  display: flex;
   gap: 1rem;
-  padding: 0 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+/* Each image's share of the row width is proportional to its aspect ratio,
+   so all images end up the same height and the row fills the viewport. */
+.gallery a {
+  flex: calc(var(--ratio)) 1 0;
+  min-width: 0;
 }
 
 .gallery img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* Single photo page: caption below landscape images, beside portrait ones. */
+.photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 3rem;
+}
+
+.photo img {
+  display: block;
+  max-width: 100%;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+}
+
+.photo p {
+  max-width: 65ch;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.photo.portrait {
+  flex-direction: row;
+  justify-content: center;
+}
+
+.photo.portrait img {
+  min-width: 0;
+}
+
+.photo.portrait p {
+  max-width: 40ch;
+}
+
+/* On narrow screens a single row would be too small, so stack the images. */
+@media (max-width: 600px) {
+  .gallery {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  .gallery a {
+    flex: none;
+  }
+
+  .photo,
+  .photo.portrait {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
 }
 
 footer {
