@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Summer chafer – Teo photography</title>
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="../style.css">
+  <noscript><style>img[data-src] { display: none; }</style></noscript>
+  <script src="../insects.js" defer></script>
 </head>
 <body>
   <header>
@@ -12,9 +15,18 @@
   </header>
 
   <main class="photo">
-    <img src="../images/amphimallon_solstitiale_040725_full.png" alt="Summer chafer on fence post" width="5079" height="3386">
-    <p>A friendly Summer chafer giving me a close look on my fence post. I have seen these fairly sizeable beetles descending in massive numbers upon a tree that fits their liking, creating a rather loud buzz and clumsily colliding with any obstacles in their vicinity only to have all but disappeared by the next morning. The purpose of their visit still remains a mystery.</p>
+    <img data-src="../images/amphimallon_solstitiale_040725_full.png" data-insect alt="Summer chafer on a fence post" width="5079" height="3386">
+    <noscript><img src="../images/amphimallon_solstitiale_040725_full.png" alt="Summer chafer on a fence post" width="5079" height="3386"></noscript>
+    <p>A friendly Summer chafer (Amphimallon solstitiale) giving me a close look on my fence post. I have seen these fairly sizeable beetles descending in massive numbers upon a tree that fits their liking, creating a rather loud buzz and clumsily colliding with any obstacles in their vicinity only to have all but disappeared by the next morning. The purpose of their visit still remains a mystery.</p>
   </main>
+
+  <dialog id="insect-dialog" data-decline-url="../index.html">
+    <form method="dialog">
+      <p>This photo is a close-up of an insect. Would you like to see it?</p>
+      <button value="yes">Show photo</button>
+      <button value="no">Back to gallery</button>
+    </form>
+  </dialog>
 
   <footer>
     <p>&copy; 2026 Teo</p>

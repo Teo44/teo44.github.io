@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lymantria dispar dispar – Teo photography</title>
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="../style.css">
+  <noscript><style>img[data-src] { display: none; }</style></noscript>
+  <script src="../insects.js" defer></script>
 </head>
 <body>
   <header>
@@ -12,9 +15,18 @@
   </header>
 
   <main class="photo portrait">
-    <img src="../images/lymantria_dispar_dispar_050826_full.png" alt="Lymantria dispar dispar showing his antennae" width="3723" height="4964">
-    <p>A Lymantria dispar dispar showing off his impressive antennae. Only the males carry the sizeable, comb-like extensions, which are used to locate females by their pheromones.</p>
+    <img data-src="../images/lymantria_dispar_dispar_050826_full.png" data-insect alt="Lymantria dispar dispar showing his antennae" width="3723" height="4964">
+    <noscript><img src="../images/lymantria_dispar_dispar_050826_full.png" alt="Lymantria dispar dispar showing his antennae" width="3723" height="4964"></noscript>
+    <p>A Lymantria dispar dispar showing off his impressive antennae. Only the males carry the sizeable, comb-like extensions, which they use to locate females by their pheromones.</p>
   </main>
+
+  <dialog id="insect-dialog" data-decline-url="../index.html">
+    <form method="dialog">
+      <p>This photo is a close-up of an insect. Would you like to see it?</p>
+      <button value="yes">Show photo</button>
+      <button value="no">Back to gallery</button>
+    </form>
+  </dialog>
 
   <footer>
     <p>&copy; 2026 Teo</p>

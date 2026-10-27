@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Teo photography</title>
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="style.css">
+  <noscript><style>img[data-src] { display: none; }</style></noscript>
+  <script src="insects.js" defer></script>
 </head>
 <body>
   <header>
@@ -13,12 +16,15 @@
 
   <main>
     <section class="gallery">
-      <!-- --ratio is the image's width/height; it keeps every image in the row the same height -->
-      <a href="photos/summer-chafer.html" style="--ratio: 2233 / 1489">
-        <img src="images/amphimallon_solstitiale_040725.png" alt="Summer chafer on fence post" width="2233" height="1489">
+      <!-- --ratio is the image's width/height; it keeps every image in the row the same height.
+           Insect photos are marked with data-insect and use data-src, so they only load once the visitor agrees. -->
+      <a href="photos/summer-chafer.html" data-insect style="--ratio: 2233 / 1489">
+        <img data-src="images/amphimallon_solstitiale_040725.png" alt="Summer chafer on fence post" width="2233" height="1489">
+        <noscript><span class="insect-placeholder">Insect close-up – click to view</span></noscript>
       </a>
-      <a href="photos/lymantria-dispar.html" style="--ratio: 1116 / 1489">
-        <img src="images/lymantria_dispar_dispar_050826.png" alt="Lymantria dispar dispar showing his antennae" width="1116" height="1489">
+      <a href="photos/lymantria-dispar.html" data-insect style="--ratio: 1116 / 1489">
+        <img data-src="images/lymantria_dispar_dispar_050826.png" alt="Lymantria dispar dispar showing his antennae" width="1116" height="1489">
+        <noscript><span class="insect-placeholder">Insect close-up – click to view</span></noscript>
       </a>
       <a href="photos/moose.html" style="--ratio: 2238 / 1382">
         <img src="images/moose_161026.png" alt="My first moose sighting" width="2238" height="1382">
@@ -26,8 +32,17 @@
     </section>
   </main>
 
+  <dialog id="insect-dialog">
+    <form method="dialog">
+      <p>Some of these photos are close-ups of insects. Would you like to see them?</p>
+      <button value="yes">Show insects</button>
+      <button value="no">Hide insects</button>
+    </form>
+  </dialog>
+
   <footer>
     <p>&copy; 2026 Teo</p>
+    <button id="insect-toggle" class="link-button" hidden></button>
   </footer>
 </body>
 </html>
