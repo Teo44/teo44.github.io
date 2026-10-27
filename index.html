@@ -16,19 +16,32 @@
 
   <main>
     <section class="gallery">
-      <!-- --ratio is the image's width/height; it keeps every image in the row the same height.
-           Insect photos are marked with data-insect and use data-src, so they only load once the visitor agrees. -->
-      <a href="photos/summer-chafer.html" data-insect style="--ratio: 2233 / 1489">
-        <img data-src="images/amphimallon_solstitiale_040725.png" alt="Summer chafer on fence post" width="2233" height="1489">
-        <noscript><span class="insect-placeholder">Insect close-up – click to view</span></noscript>
-      </a>
-      <a href="photos/lymantria-dispar.html" data-insect style="--ratio: 1116 / 1489">
-        <img data-src="images/lymantria_dispar_dispar_050826.png" alt="Lymantria dispar dispar showing his antennae" width="1116" height="1489">
-        <noscript><span class="insect-placeholder">Insect close-up – click to view</span></noscript>
-      </a>
-      <a href="photos/moose.html" style="--ratio: 2238 / 1382">
-        <img src="images/moose_161026.png" alt="My first moose sighting" width="2238" height="1382">
-      </a>
+      <!-- Photos are grouped into rows of 3. --ratio is the image's width/height; it keeps every
+           image in a row the same height. Insect photos are marked with data-insect and use
+           data-src, so they only load once the visitor agrees. -->
+      <div class="gallery-row">
+        <a href="photos/summer-chafer.html" data-insect style="--ratio: 2000 / 1333">
+          <img data-src="images/amphimallon_solstitiale_040725_preview.jpg" alt="Summer chafer on fence post" width="2000" height="1333">
+          <noscript><span class="insect-placeholder">Insect close-up – click to view</span></noscript>
+        </a>
+        <a href="photos/lymantria-dispar.html" data-insect style="--ratio: 1500 / 2000">
+          <img data-src="images/lymantria_dispar_dispar_050826_preview.jpg" alt="Lymantria dispar dispar showing his antennae" width="1500" height="2000">
+          <noscript><span class="insect-placeholder">Insect close-up – click to view</span></noscript>
+        </a>
+        <a href="photos/moose.html" style="--ratio: 2000 / 1236">
+          <img src="images/moose_161026_preview.jpg" alt="My first moose sighting" width="2000" height="1236">
+        </a>
+      </div>
+      <div class="gallery-row">
+        <a href="photos/cepaea-nemoralis.html" data-insect style="--ratio: 2000 / 1331">
+          <img data-src="images/20220910_0223_Cepaea_nemoralis_preview.jpg" alt="" width="2000" height="1331">
+          <noscript><span class="insect-placeholder">Insect close-up – click to view</span></noscript>
+        </a>
+        <a href="photos/araneus-diadematus.html" data-insect style="--ratio: 2000 / 1414">
+          <img data-src="images/20220913_0060_Araneus_diadematus_preview.jpg" alt="" width="2000" height="1414">
+          <noscript><span class="insect-placeholder">Insect close-up – click to view</span></noscript>
+        </a>
+      </div>
     </section>
   </main>
 

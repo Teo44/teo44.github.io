@@ -27,12 +27,18 @@ h1 {
 
 .gallery {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
   padding: 0 3rem;
 }
 
+.gallery-row {
+  display: flex;
+  gap: 1rem;
+}
+
 /* Each image's share of the row width is proportional to its aspect ratio,
-   so all images end up the same height and the row fills the viewport. */
+   so all images in a row end up the same height and the row fills the viewport. */
 .gallery a {
   flex: calc(var(--ratio)) 1 0;
   min-width: 0;
@@ -45,7 +51,8 @@ h1 {
 }
 
 /* Insect photos stay hidden until the visitor chooses to see them (see insects.js). */
-.js:not(.show-insects) [data-insect] {
+.js:not(.show-insects) [data-insect],
+.js:not(.show-insects) .gallery-row:not(:has(> :not([data-insect]))) {
   display: none;
 }
 
@@ -142,8 +149,11 @@ dialog button:hover {
 /* On narrow screens a single row would be too small, so stack the images. */
 @media (max-width: 600px) {
   .gallery {
-    flex-direction: column;
     padding: 0 1rem;
+  }
+
+  .gallery-row {
+    flex-direction: column;
   }
 
   .gallery a {
