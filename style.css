@@ -44,6 +44,22 @@ h1 {
   min-width: 0;
 }
 
+/* An incomplete last row gets an invisible filler standing in for each missing
+   photo (counted as a typical 3:2 landscape), so its photos stay about as tall
+   as a full row instead of stretching across the whole width. */
+.gallery-row:last-child::after {
+  content: "";
+  flex: 3 1 0;
+}
+
+.gallery-row:last-child:has(> a:nth-of-type(2))::after {
+  flex-grow: 1.5;
+}
+
+.gallery-row:last-child:has(> a:nth-of-type(3))::after {
+  display: none;
+}
+
 .gallery img {
   width: 100%;
   height: auto;
@@ -174,6 +190,10 @@ dialog button:hover {
 
   .gallery a {
     flex: none;
+  }
+
+  .gallery-row::after {
+    display: none;
   }
 
   .photo,
