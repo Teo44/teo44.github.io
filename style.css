@@ -141,6 +141,12 @@ dialog button:hover {
   min-width: 0;
 }
 
+/* Clicking the photo opens the image file on its own. */
+.photo-full {
+  display: block;
+  cursor: zoom-in;
+}
+
 .photo img {
   display: block;
   max-width: 100%;
