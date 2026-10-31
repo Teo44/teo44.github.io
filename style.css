@@ -110,13 +110,19 @@ dialog button:hover {
   cursor: pointer;
 }
 
-/* Single photo page: caption below landscape images, beside portrait ones. */
+/* Single photo page: camera details right under the image; caption below
+   landscape images and beside portrait ones. */
 .photo {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
   padding: 0 3rem;
+}
+
+.photo-frame {
+  max-width: 100%;
+  min-width: 0;
 }
 
 .photo img {
@@ -127,10 +133,24 @@ dialog button:hover {
   height: auto;
 }
 
-.photo p {
+/* width: 0 + min-width: 100% makes the line wrap at the image's width
+   instead of stretching the frame wider than the image. */
+.photo-details {
+  width: 0;
+  min-width: 100%;
+  margin: 0.5rem 0 0;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.photo-caption {
   max-width: 65ch;
   margin: 0;
   line-height: 1.6;
+}
+
+.photo-caption:empty {
+  display: none;
 }
 
 .photo.portrait {
@@ -138,11 +158,7 @@ dialog button:hover {
   justify-content: center;
 }
 
-.photo.portrait img {
-  min-width: 0;
-}
-
-.photo.portrait p {
+.photo.portrait .photo-caption {
   max-width: 40ch;
 }
 
