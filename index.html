@@ -16,9 +16,10 @@
 
   <main>
     <section class="gallery">
-      <!-- Photos are grouped into rows of 3. --ratio is the image's width/height; it keeps every
-           image in a row the same height. Insect photos are marked with data-insect and use
-           data-src, so they only load once the visitor agrees. -->
+      <!-- Photos are grouped into rows of 3; insects.js rebuilds the rows from the visible
+           photos, so the grouping here only matters without JavaScript. --ratio is the image's
+           width/height; it keeps every image in a row the same height. Insect photos are marked
+           with data-insect and use data-src, so they only load once the visitor agrees. -->
       <div class="gallery-row">
         <a href="photos/summer-chafer.html" data-insect style="--ratio: 2000 / 1333">
           <img data-src="images/amphimallon_solstitiale_040725_preview.jpg" alt="Summer chafer on fence post" width="2000" height="1333">
